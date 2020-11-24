@@ -37,24 +37,3 @@ class knn_classifier:
 
         # Returning the final classification
         return get_mode(classification)
-
-
-classifier = knn_classifier()
-training_data_points = [
-    [[255, 0, 0], "red"], 
-    [[0, 255, 0], "green"], 
-    [[0, 0, 255], "blue"],
-    [[250, 5, 5], "red"],
-    [[5, 250, 5], "green"],
-    [[5, 5, 250], "blue"],
-    [[245, 10, 10], "red"],
-    [[10, 245, 10], "green"],
-    [[10, 10, 245], "blue"],
-]
-
-for point in training_data_points:
-    classifier.add_example(point[0], point[1])
-
-print (classifier.classify([250, 0, 0], k = 3))
-print (classifier.classify([100, 180, 50], k = 3))
-print (classifier.classify([50, 50, 190], k = 3))
